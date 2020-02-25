@@ -16,11 +16,11 @@ function App() {
 						<Link to="/login">Login</Link>
 					</li>
 					<li>
-						<Link to="/friends">Friends List</Link>
+						<Link to="/protected">Friends List</Link>
 					</li>
 				</ul>
 				<Switch>
-					<PrivateRoute exact path="/friends" component={FriendsList} />
+					<PrivateRoute exact path="/protected" component={FriendsList} />
 					<Route path="/login" component={Login} />
 					<Route component={Login} />
 				</Switch>

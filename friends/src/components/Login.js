@@ -25,12 +25,13 @@ const Login = (props) => {
 			})
             .then(res => {
                 console.log(res);
-				window.localStorage.setItem("token", res.data.payload);
-
-				props.history.push("/protected");
+                window.localStorage.setItem("token", res.data.payload);
+                props.history.push("/protected");
+                setData(initialState);
 			})
 			.catch(error => {
-				console.log(error);
+                console.log(error);
+                setData(initialState);
 			});
 	};
 
