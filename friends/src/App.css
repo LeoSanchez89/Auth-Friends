@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+section .card{
+  border: 1.8px dashed rgb(0, 175, 0);
+  width:30%;
+  margin:1%;
+  padding:1%;
+}
+
+.card-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+ 
+}
+ul {
+  list-style-type: none;
+}
+
+form .login-field{
+  width:50%;
+  margin-left:25%;
+}
+
+div .friend-form{
+  width:35%;
+
+}
+.form-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:2%;
+}
+div h2{
+  margin:2%;
+}
