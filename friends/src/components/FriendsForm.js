@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 
 import { FriendsContext } from "../contexts/FriendsContext";
-
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+
+import { InputGroup, Input, Button } from "reactstrap";
 
 const FriendsForm = () => {
 	const { setFriends } = useContext(FriendsContext);
@@ -41,11 +42,11 @@ const FriendsForm = () => {
 	};
 
 	return (
-		<div>
+		<div className="form-container">
 			<h2>Add a Friend</h2>
 
-			<form onSubmit={handleFormSubmit}>
-				<input
+			<form className="friend-form" onSubmit={handleFormSubmit}>
+				<Input
 					className="input-field"
 					type="text"
 					placeholder="Name"
@@ -56,7 +57,7 @@ const FriendsForm = () => {
 					required
 				/>
 
-				<input
+				<Input
 					className="input-field"
 					type="text"
 					placeholder="Age"
@@ -67,17 +68,17 @@ const FriendsForm = () => {
 					required
 				/>
 
-				<input
+				<Input
 					className="input-field"
 					type="text"
-					placeholder="email"
+					placeholder="Email"
 					value={data.email}
 					name="email"
 					id="email"
 					onChange={handleInputChange}
 					required
 				/>
-				<button type="submit">Submit</button>
+				<Button block color="success" type="submit">Submit</Button>
 			</form>
 		</div>
 	);

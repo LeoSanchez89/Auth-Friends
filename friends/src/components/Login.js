@@ -1,6 +1,8 @@
 import React from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
+import { InputGroup, Input, Button } from "reactstrap";
+
 const Login = (props) => {
 	const initialState = {
 		username: "",
@@ -38,29 +40,29 @@ const Login = (props) => {
 	return (
 		<div>
 			<form onSubmit={handleFormSubmit}>
-				<input
-					type="text"
-					placeholder="Username"
-					value={data.username}
-					name="username"
-					id="username"
-					onChange={handleInputChange}
-					required
-				/>
+				<InputGroup className="login-field">
+					<Input
+						type="text"
+						placeholder="Username"
+						value={data.username}
+						name="username"
+						id="username"
+						onChange={handleInputChange}
+						required
+					/>
+				
+					<Input
+						type="password"
+						placeholder="Password"
+						value={data.password}
+						name="password"
+						id="password"
+						onChange={handleInputChange}
+						required
+					/>
 
-				<input
-					type="password"
-					placeholder="Password"
-					value={data.password}
-					name="password"
-					id="password"
-					onChange={handleInputChange}
-					required
-				/>
-
-				<button type="submit">
-					Login
-				</button>
+					<Button color="primary" type="submit">Login</Button>
+				</InputGroup>
 			</form>
 		</div>
 	);

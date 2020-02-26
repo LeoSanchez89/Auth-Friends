@@ -43,6 +43,7 @@ function App() {
 						{/* <PrivateRoute exact path="/protected" component={FriendsForm} /> */}
 						<PrivateRoute exact path="/protected" component={FriendsList} />
 						<Route path="/login" component={Login} />
+						<Route component={Login} />
 					</Switch>
 				</FriendsContext.Provider>
 			</div>
