@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 
@@ -8,14 +8,12 @@ import FriendsList from "./components/FriendsList";
 import PrivateRoute from "./components/PrivateRoute";
 // import FriendsForm from "./components/FriendsForm";
 
-import './App.css';
-
+import "./App.css";
 
 function App() {
+	const [friends, setFriends] = useState([]);
 
-  const [friends, setFriends] = useState([]);
-
-  useEffect(() => {
+	useEffect(() => {
 		axiosWithAuth()
 			.get("/api/friends")
 			.then(res => {
@@ -30,14 +28,14 @@ function App() {
 	return (
 		<Router>
 			<div className="App">
-				<ul>
-					<li>
-						<Link to="/login">Login</Link>
-					</li>
-					<li>
-						<Link to="/protected">Friends List</Link>
-					</li>
-				</ul>
+				{window.localStorage.getItem("token") ? null : (
+					<nav>
+						<Link className="link" to="/login">Login</Link>
+
+						<Link className="link" to="/protected">Friends List</Link>
+					</nav>
+				)}
+
 				<FriendsContext.Provider value={{ friends, setFriends }}>
 					<Switch>
 						{/* <PrivateRoute exact path="/protected" component={FriendsForm} /> */}

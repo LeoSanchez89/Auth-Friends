@@ -15,13 +15,17 @@ section .card{
   justify-content: space-evenly;
  
 }
-ul {
-  list-style-type: none;
+nav .link{
+  margin:3%;
+}
+nav{
+  margin:1%;
 }
 
 form .login-field{
   width:50%;
   margin-left:25%;
+  margin-top:10%;
 }
 
 div .friend-form{
